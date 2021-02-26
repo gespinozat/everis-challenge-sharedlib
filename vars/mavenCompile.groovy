@@ -6,7 +6,7 @@ def call(givenConfig = [:]) {
         ]
     ]
 
-    def effectiveConfig merge(defaultConfig, givenConfig)
+    def effectiveConfig = merge(defaultConfig, givenConfig)
     
     node {
 
