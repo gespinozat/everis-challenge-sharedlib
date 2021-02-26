@@ -8,11 +8,7 @@ def call(givenConfig = [:]) {
 
     def effectiveConfig = defaultConfig + givenConfig
     
-    node {
-
-        tools {
-            maven "M3"
-        }
+    node {        
 
         if (effectiveConfig.maven.skipTests) {
             stage("Clean and build skipping tests") {
