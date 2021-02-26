@@ -12,7 +12,7 @@ def call(givenConfig = [:]) {
     node {
         stage('Checking files') {
 
-            git effectiveConfig.repo
+            git branch: "main", url: effectiveConfig.repo
 
             sh "ls"
             if (fileExists('pom.xml')) {
