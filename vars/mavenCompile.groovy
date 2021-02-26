@@ -8,7 +8,14 @@ def call(givenConfig = [:]) {
 
     def effectiveConfig = defaultConfig + givenConfig
     
-    node {        
+    node {
+        stage('Checking files') {
+            sh "ls"
+            if (fileExists('pom.xml')) {
+                echo "POM files exists"
+            }
+        }
+        
 
         if (effectiveConfig.maven.skipTests) {
             stage("Clean and build skipping tests") {
