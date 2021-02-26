@@ -1,6 +1,7 @@
 def call(givenConfig = [:]) {
     
     def defaultConfig = [
+        "repo": "https://github.com/gespinozat/everis-challenge-app.git"
         "maven": [
             "skipTests": true
         ]
