@@ -11,6 +11,9 @@ def call(givenConfig = [:]) {
     
     node {
         stage('Checking files') {
+
+            git effectiveConfig.repo
+
             sh "ls"
             if (fileExists('pom.xml')) {
                 echo "POM files exists"
